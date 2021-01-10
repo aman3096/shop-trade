@@ -1,4 +1,5 @@
-import React from 'react';
+import React,{ useState } from 'react';
+import './Products.css';
 import styled from 'styled-components';
 import dats from '../../assets/data.json';
 
@@ -97,19 +98,53 @@ line-height: 1.4;
   font-size: 12px;
   color: #ED4E08;
 `
+
+const AddCart = styled.button`
+    width: 232px;
+    height: 36px;
+    left: 1168px;
+    top: 1141px;
+    border: 1px solid #878787;
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding-left:15px;
+    padding-right:15px;
+    margin-top:18px;
+`
+const InsideSpan = styled.span`
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 16px;
+text-transform: capitalize;
+
+color: #878787;
+`
 const Products = () => {
   const loadData = [...dats];
+  const [btnClicked,setBtnClicked]=useState(false);
   return (
     <Div>
         <Grid>
-            {loadData.map(item=>(<Inside>
-            <InsideImg src={item.image_src}/>
+  {loadData.map(item=>(<Inside className="container" >
+            <InsideImg className="image" src={item.image_src}/>
             <Brand>{item.vendor}</Brand><br/>
             <Name>{item.name}</Name><br/>
             <Price>$599</Price>
             <Discount> $1200</Discount><Percent> (50% OFF)</Percent>
+            <div className="middle">
+            <div className="text">
+                {!btnClicked ?<AddCart onClick={()=>setBtnClicked(!btnClicked)}>ADD TO CART</AddCart>:<div>Hello</div>}
+  <InsideSpan>Sizes:{item.options.map(opt=><InsideSpan>{opt.value},</InsideSpan>)}</InsideSpan>
+            
+            </div>
+            </div>
               </Inside>))}
+            
         </Grid>
+    
     </Div>
   );
 }

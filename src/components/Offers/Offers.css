@@ -17,12 +17,32 @@
 background: linear-gradient(90.06deg, #181716 0%, #ED4E08 99.97%);
 }
 #offerBtn{
+ 
+position: absolute;
+width: 94px;
+height: 29px;
+left: 100%;
+top: -4px;
+margin-left:px;
+background: #FFFFFF;
+border-radius: 20px;
+}
+
+#offerText {
     position: absolute;
-    width: 94px;
-    height: 29px;
-    margin-left:1%;
-    border: none;
-    top: 15%;
-    background: #FFFFFF;
-    border-radius: 20px;
+    width: 668px;
+    height: 19px;
+    left: 325px;
+    top: 16px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+    text-transform: capitalize;
+
+    color: #FFFFFF;
 }

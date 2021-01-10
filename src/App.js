@@ -11,23 +11,25 @@ import Products from './components/Products/Products';
 import Offers from './components/Offers/Offers';
 import Nav from './components/Nav/Nav';
 import ClothingHome from './components/ClothingHome/ClothingHome';
-
 import AllProducts from './components/AllProducts/AllProducts';
 import styled from 'styled-components';
+
+import Logo from './assets/logo.png'
 import Search from './assets/search.png';
 import Cart from './assets/Cart.svg';
 import Profile from './assets/profile.svg';
-import Down from './assets/down.svg'
+import Down from './assets/down.svg';
+
 const Navbar = styled.div`
 position: absolute;
 width: 1440px;
 height: 70px;
 left: 0px;
 top: 0px;
-
 background: #FFFFFF;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);
 `
+
 const Img = styled.button`
   position: absolute;
   left:85%;
@@ -140,21 +142,29 @@ background: #FFFFFF;
 transform: matrix(-1, 0, 0, 1, 0, 0);
 `
 const HR = styled.hr`
-
-position: absolute;
-width: 1390px;
-height: 0px;
-left: 25px;
-top: 292px;
+  position: absolute;
+  width: 1390px;
+  height: 0px;
+  left: 25px;
+  top: 292px;
 
 border: 1px solid #E5E5E5;
+`
+
+const LogoImg = styled.img`
+  height:38px;
+  width:38px;
+  margin-left:25px;
+  margin-top:16px;
+  margin-bottom:16px;
 `
 function App() {
   return (
     <div>
      
-      <Router>
+    <Router>
         <Navbar>
+        <LogoImg src={Logo}/>
           <Link to="/shop"><Span>Shop</Span><ImgSpan src={Down}/></Link>
           <Link to="/aboutus"><AboutSpan>About us</AboutSpan></Link>
           <Link to="/stores"><StoreSpan>Our Stores</StoreSpan></Link>

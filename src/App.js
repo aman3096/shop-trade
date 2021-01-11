@@ -10,8 +10,14 @@ import Filters from './components/Filters/Filters';
 import Products from './components/Products/Products';
 import Offers from './components/Offers/Offers';
 import Nav from './components/Nav/Nav';
+import Shirts from './components/Shirts/Shirts';
+import Polos from './components/Polos/Polos';
+import Sweatshirts from './components/Sweatshirts/Sweatshirts';
+
+import TeeShirt from './components/TeeShirt/TeeShirt';
 import ClothingHome from './components/ClothingHome/ClothingHome';
 import AllProducts from './components/AllProducts/AllProducts';
+import Denim from './components/Denim/Denim';
 import styled from 'styled-components';
 
 import Logo from './assets/logo.png'
@@ -162,7 +168,7 @@ function App() {
   return (
     <div>
      
-    <Router>
+  
         <Navbar>
         <LogoImg src={Logo}/>
           <Link to="/shop"><Span>Shop</Span><ImgSpan src={Down}/></Link>
@@ -177,14 +183,19 @@ function App() {
         </Navbar>
         <Offers/>
        <Switch>
-            <Route exact path="/"><Products/></Route>
-            <Route exact path="/shop"><Shop/></Route>
-            <Route exact path="/aboutus"><About/></Route>
-            <Route exact path="/stores"><Stores/></Route>
-            <Route exact path="/contactUs"><Contact/></Route>
+            <Route exact path="/" component={Products}/>
+            <Route exact path="/shop" component={Shop}/>
+            <Route exact path="/aboutus" component={About}/>
+            <Route exact path="/stores" component={Stores}/>
+            <Route exact path="/contactUs" component={Contact}/>
+            <Route exact path="/allProducts" component={Products}/>
+            <Route exact path="/TeeShirt" component={TeeShirt}/>
+            <Route exact path="/Denim" component={Denim}/>
+            <Route exact path="/Sweatshirts" component={Sweatshirts}/>
+            <Route exact path="/Shirts" component={Shirts}/>
+            <Route exact path="/Polos" component={Polos}/>
         </Switch>
 
-      </Router>
       <ClothingHome/>
       <AllProducts/>
       <Filters/>

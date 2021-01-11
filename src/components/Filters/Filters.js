@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import {BrowserRouter as Router, Link} from 'react-router-dom';
+
 
 const Div= styled.div`
   display:block;
@@ -113,19 +115,17 @@ function Filters() {
   return (
     <Div>
       <B>FILTERS:</B>
-      <All>All Products</All>
-      <Tee>Tee Shirt</Tee>
-      <Denim>Denim</Denim>
-      <Sweatshirts>Sweatshirts</Sweatshirts>
-      <Polo>Polo Tee Shirt</Polo>
-      <Shirt>Shirt</Shirt>
+        <Link to="/allProducts"><All>All Products</All></Link>
+        <Link to="/TeeShirt"><Tee>Tee Shirt</Tee></Link>
+        <Link to="/Denim"><Denim>Denim</Denim></Link>
+        <Link to="/Sweatshirts"><Sweatshirts>Sweatshirts</Sweatshirts></Link>
+        <Link to="/Polos"><Polo>Polo Tee Shirt</Polo></Link>
+        <Link to="/Shirts"><Shirt>Shirt</Shirt></Link>
+    
 
 
-  <Select name="cars" id="cars">
+  <Select name="sort" id="sort">
     <option value="LowToHigh">Sort By: Price Low To High</option>
-    <option value="saab">Saab</option>
-    <option value="opel">Opel</option>
-    <option value="audi">Audi</option>
   </Select>
     </Div>
   );

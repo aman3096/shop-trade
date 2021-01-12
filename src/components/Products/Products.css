@@ -16,7 +16,7 @@
     opacity: 0;
     width: 262px;
     height: 146px;
-    transform: translate(0%, -80%);
+    transform: translate(0%, -98%);
     -ms-transform: translate(-50%, -50%);
     left:10%;
   }
@@ -30,6 +30,7 @@
   .text {
     background-color: white;
     color: black;
+    height:113px;
     font-size: 14px;
     padding-left: 15px;
     padding-right:15px;

@@ -2,7 +2,6 @@ import React,{ useState } from 'react';
 import './Products.css';
 import styled from 'styled-components';
 import dats from '../../assets/data.json';
-
 const Div = styled.div`
 position: absolute;
 left: 25px;
@@ -111,6 +110,7 @@ const AddCart = styled.button`
     padding-left:15px;
     padding-right:15px;
     margin-top:18px;
+    margin-bottom: 12px;
 `
 const InsideSpan = styled.div`
 
@@ -193,6 +193,7 @@ const Deep = styled.div`
 const Drive = styled.div`
 margin-top:15px;
 `
+
 const Products = () => {
   const loadData = [...dats];
   const [btnClicked,setBtnClicked]=useState(false);

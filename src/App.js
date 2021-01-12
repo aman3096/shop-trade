@@ -1,15 +1,15 @@
+import React, { useState } from 'react';
 import './App.css';
-import  { BrowserRouter as Router, Route,Switch, Link } from 'react-router-dom'; 
+
+import  { Route,Switch, Link } from 'react-router-dom'; 
 
 import Contact from './components/Contact/Contact';
 import Shop from './components/Shop/Shop';
 import About from './components/About/About';
 import Stores from './components/Stores/Stores';
-import Main from './components/Main/Main';
 import Filters from './components/Filters/Filters';
 import Products from './components/Products/Products';
 import Offers from './components/Offers/Offers';
-import Nav from './components/Nav/Nav';
 import Shirts from './components/Shirts/Shirts';
 import Polos from './components/Polos/Polos';
 import Sweatshirts from './components/Sweatshirts/Sweatshirts';
@@ -22,7 +22,7 @@ import styled from 'styled-components';
 
 import Logo from './assets/logo.png'
 import Search from './assets/search.png';
-import Cart from './assets/Cart.svg';
+import Cart from './assets/Cart.png';
 import Profile from './assets/profile.svg';
 import Down from './assets/down.svg';
 
@@ -38,7 +38,7 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);
 
 const Img = styled.button`
   position: absolute;
-  left:85%;
+  left:87%;
   right: 15.68%;
   top: 15.6%;
   bottom: 15.67%;
@@ -48,7 +48,7 @@ const Img = styled.button`
 `
 const Prof = styled.button`
   position: absolute;
-  left:88%; 
+  left:90%; 
   right: 24%;
   top: 16.33%;
   bottom: 16.33%;
@@ -59,10 +59,10 @@ const Prof = styled.button`
 `
 const CartImg = styled.button`
 position: absolute;
-left:90%;
+left:92%;
 right: 15.07%;
 top: 20.27%;
-bottom: 35.27%;
+bottom: 17.27%;
 background: #010202;
   border:none;
   background-color:transparent;
@@ -117,8 +117,9 @@ font-weight: normal;
 font-size: 14px;
 line-height: 16px;
 text-transform: capitalize;
-
 color: #000000;
+
+
 `
 
 const ContactSpan = styled.span`
@@ -163,12 +164,12 @@ const LogoImg = styled.img`
   margin-left:25px;
   margin-top:16px;
   margin-bottom:16px;
-`
+  `
 function App() {
   return (
     <div>
-     
-  
+
+
         <Navbar>
         <LogoImg src={Logo}/>
           <Link to="/shop"><Span>Shop</Span><ImgSpan src={Down}/></Link>
@@ -178,12 +179,12 @@ function App() {
           <Img><img src={Search} alt="search" /></Img>
           <Prof><img src={Profile} alt="profile" /></Prof>
           <CartImg><img src={Cart} alt="cart" /></CartImg>
-          
+
 
         </Navbar>
         <Offers/>
        <Switch>
-            <Route exact path="/" component={Products}/>
+       <Route exact path="/" component={Products}/>
             <Route exact path="/shop" component={Shop}/>
             <Route exact path="/aboutus" component={About}/>
             <Route exact path="/stores" component={Stores}/>

@@ -194,7 +194,7 @@ margin-top:15px;
 `
 
 const filters = dats.filter(item=>item.tag==="T-shirt")
-const TeeShirt = () => {
+const TeeShirt = ({onClick}) => {
     const loadData = [...filters]
     const [btnClicked,setBtnClicked]= useState(false);
   return (
@@ -217,7 +217,7 @@ const TeeShirt = () => {
 <InsideSpan>
   <BoldS>Select Size</BoldS><br/>
    {item.options.map(sel =>(!btnClicked&&<span><Size onClick={()=>setBtnClicked(!btnClicked)}>{sel["value"].substr(0,2)}</Size></span>))}
-   {btnClicked && <AddCart>ADD TO CART</AddCart>}
+   {btnClicked && <AddCart onClick={onClick}>ADD TO CART</AddCart>}
   Sizes:{item.options.map(opt=><InsideSpand>
   <Spans>{opt.value},</Spans>
 </InsideSpand>)}</InsideSpan>

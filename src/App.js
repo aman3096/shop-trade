@@ -165,7 +165,15 @@ const LogoImg = styled.img`
   margin-top:16px;
   margin-bottom:16px;
   `
+  const spandan= styled.span`
+    bottom:-122px
+  `
 function App() {
+  const [count, setCount] = useState(0);
+  const increment = () => {
+    setCount(count + 1)
+  }
+
   return (
     <div>
 
@@ -178,25 +186,25 @@ function App() {
           <Link to="/contactus"><ContactSpan>Contact Us</ContactSpan></Link>
           <Img><img src={Search} alt="search" /></Img>
           <Prof><img src={Profile} alt="profile" /></Prof>
-          <CartImg><img src={Cart} alt="cart" /></CartImg>
-
+          <CartImg><img src={Cart} alt="cart" /><spandan>{count}</spandan></CartImg>
+          
 
         </Navbar>
         <Offers/>
        <Switch>
-       <Route exact path="/" component={Products}/>
-            <Route exact path="/shop" component={Shop}/>
-            <Route exact path="/aboutus" component={About}/>
-            <Route exact path="/stores" component={Stores}/>
-            <Route exact path="/contactUs" component={Contact}/>
-            <Route exact path="/allProducts" component={Products}/>
-            <Route exact path="/TeeShirt" component={TeeShirt}/>
-            <Route exact path="/Denim" component={Denim}/>
-            <Route exact path="/Sweatshirts" component={Sweatshirts}/>
-            <Route exact path="/Shirts" component={Shirts}/>
-            <Route exact path="/Polos" component={Polos}/>
+       <Route exact path="/"><Products onClick={increment}/></Route>
+            <Route exact path="/shop"><Shop onClick={increment}/></Route>
+            <Route exact path="/aboutus"><About onClick={increment}/></Route>
+            <Route exact path="/stores"><Stores onClick={increment}/></Route>
+            <Route exact path="/contactUs"><Contact onClick={increment}/></Route>
+            <Route exact path="/allProducts"><Products onClick={increment}/></Route>
+            <Route exact path="/TeeShirt"><TeeShirt onClick={increment}/></Route>
+            <Route exact path="/Denim" ><Denim onClick={increment}/></Route>
+            <Route exact path="/Sweatshirts"><Sweatshirts onClick={increment}/></Route>
+            <Route exact path="/Shirts"><Shirts onClick={increment}/></Route>
+            <Route exact path="/Polos"><Polos onClick={increment}/></Route>
         </Switch>
-
+      
       <ClothingHome/>
       <AllProducts/>
       <Filters/>
